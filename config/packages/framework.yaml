@@ -7,7 +7,10 @@ framework:
 
     #esi: true
     #fragments: true
-
+    cache:
+        pools:
+            doctrine.second_level_cache_pool:
+                adapter: cache.adapter.filesystem
 when@test:
     framework:
         test: true

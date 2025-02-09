@@ -1,0 +1,26 @@
+<div {{ attributes }}>
+    <div class="relative">
+        <button
+                class="relative"
+                data-action="live#action"
+                data-action-name="addToCart"
+        >
+            🛒
+            {% if this.unreadCount > 0 %}
+                <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
+            {{ this.unreadCount }}
+        </span>
+            {% endif %}
+        </button>
+
+        <div class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg">
+            <div class="p-4">
+                {% for notification in this.notifications %}
+                    <div class="mb-2 {% if not notification.isRead %}font-bold{% endif %}">
+                        {{ notification.message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
