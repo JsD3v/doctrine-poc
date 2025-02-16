@@ -8,7 +8,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
-#[ORM\Cache(usage: 'NONSTRICT_READ_WRITE', region: 'default')]
+#[ORM\Cache(usage: 'NONSTRICT_READ_WRITE', region: 'product_region')]
 class Product
 {
     #[ORM\Id]

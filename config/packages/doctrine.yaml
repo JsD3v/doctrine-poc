@@ -32,6 +32,18 @@ doctrine:
             region_cache_driver:
                 type: pool
                 pool: doctrine.second_level_cache_pool
+
+            # déclarer la région ici :
+            regions:
+                product_region:
+                    cache_driver:
+                        type: pool
+                        pool: doctrine.second_level_cache_pool
+                    lifetime: 3600  # durée de vie en s (optionnel)
+
+
+
+
 when@test:
     doctrine:
         dbal:
